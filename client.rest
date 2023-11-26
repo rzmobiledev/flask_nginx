@@ -1,0 +1,14 @@
+###
+POST http://localhost/api/user
+Content-Type: application/json
+
+{
+    "username": "keyra",
+    "email": "keyra.almira@gmail.com",
+    "password": "password"
+}
+
+
+###
+GET http://localhost/api/user
+Content-Type: application/json
