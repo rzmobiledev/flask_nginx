@@ -1,10 +1,11 @@
 from flask import Blueprint
 from flask import jsonify, make_response, request
 from .models import User, Article
-from configuration.base import db
+from configuration.base import db, encrypt
 import socket
 
 router = Blueprint('router', __name__)
+
 
 
 @router.route("/")
@@ -16,7 +17,7 @@ def home():
 def create_user():
     try:
         data = request.get_json()
-        user = User(username=data["username"], email=data["email"], password=["password"])
+        user = User(username=data["username"], email=data["email"], password=encrypt(data["password"]))
         db.session.add(user)
         db.session.commit()
         return make_response(jsonify({'message': 'User created.'}))

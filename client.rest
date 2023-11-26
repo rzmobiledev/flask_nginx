@@ -10,5 +10,16 @@ Content-Type: application/json
 
 
 ###
+POST http://localhost/api/user
+Content-Type: application/json
+
+{
+    "username": "cuwah",
+    "email": "cuwah.azkia@gmail.com",
+    "password": "cuwah"
+}
+
+
+###
 GET http://localhost/api/user
 Content-Type: application/json
